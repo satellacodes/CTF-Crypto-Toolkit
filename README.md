@@ -184,14 +184,14 @@ MIT License - See [LICENSE](LICENSE) for details.
 
 ## 🌟 Star History
 
-[![Star History Chart](https://api.star-history.com/svg?repos=yourusername/CTF-Crypto-Toolkit&type=Date)](https://star-history.com/#yourusername/CTF-Crypto-Toolkit&Date)
+[![Star History Chart](https://api.star-history.com/svg?repos=satellacodes/CTF-Crypto-Toolkit&type=Date)](https://star-history.com/#satellacodes/CTF-Crypto-Toolkit&Date)
 
 ## 👨‍💻 Author
 
 **Dimas Aris Pangestu** - Cybersecurity researcher and CTF enthusiast
 
 [![Twitter](https://img.shields.io/badge/Twitter-@handle-blue?logo=twitter)](https://twitter.com/handle)
-[![GitHub](https://img.shields.io/badge/GitHub-username-black?logo=github)](https://github.com/username)
+[![GitHub](https://img.shields.io/badge/GitHub-username-black?logo=github)](https://github.com/satellacodes)
 
 ---
 
