@@ -1,0 +1,18 @@
+# XOR Challenge
+# Difficulty: Easy-Medium
+
+# Hex-encoded XOR encrypted string:
+"1c0111001f010100061a024b53535009181c"
+
+# XOR key: 686974207468652062756c6c277320657965
+
+# Instructions:
+# 1. Convert both to bytes
+# 2. XOR them together
+# 3. Convert result back to ASCII
+
+# Expected solution:
+# ./ctf_crypto_tool.py xor --key hex:686974207468652062756c6c277320657965 --input hex:1c0111001f010100061a024b53535009181c
+
+# Result: "the kid don't play"
+# Flag: CTF{xor_crypto_is_cool}

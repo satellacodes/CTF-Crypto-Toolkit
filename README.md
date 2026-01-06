@@ -190,18 +190,24 @@ print(f"Best match: Shift {best_result[0]}, Text: {best_result[1]}")
 
 ```
 CTF-Crypto-Toolkit/
-├── ctf_crypto_tool.py      # Main tool
-├── README.md               # This file
-├── requirements.txt        # Dependencies
-├── examples/               # Challenge examples
+├── ctf_crypto_tool.py          # Main tool
+├── README.md                   # Updated documentation
+├── CONTRIBUTING.md            # Contribution guidelines
+├── requirements.txt           # Dependencies
+├── setup.py                   # Installation script
+├── .gitignore                 # Git ignore file
+├── LICENSE                    # MIT License
+├── examples/                  # Challenge examples
 │   ├── caesar_challenge.txt
 │   ├── rsa_challenge.txt
 │   └── xor_challenge.txt
-├── wordlists/              # Dictionary files
-│   └── common_passwords.txt
-└── tests/                  # Unit tests
+├── wordlists/                 # Dictionary files
+│   ├── common_passwords.txt
+│   └── rockyou_sample.txt
+└── tests/                     # Unit tests
     ├── test_caesar.py
-    └── test_xor.py
+    ├── test_xor.py
+    └── test_integration.py
 ```
 
 ## 🤝 Contributing
@@ -245,7 +251,7 @@ MIT License - See [LICENSE](LICENSE) for details.
 
 **Dimas Aris Pangestu** - Cybersecurity researcher and CTF enthusiast
 
-[![Twitter](https://img.shields.io/badge/Tryhackme-@satella-blue?logo=Tryhackme)](https://tryhackme.com/p/satella)
+[![Tryhackme](https://img.shields.io/badge/TryHackMe-@satella-blue?logo=Tryhackme)](https://tryhackme.com/p/satella)
 [![GitHub](https://img.shields.io/badge/GitHub-satellacodes-black?logo=github)](https://github.com/satellacodes)
 
 ---

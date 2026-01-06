@@ -1,0 +1,16 @@
+# Caesar Cipher Challenge
+# Difficulty: Easy
+
+# Encrypted message:
+"Khoor, Zruog! L oryh Fodvvlf Flskhuv."
+
+# Instructions:
+# 1. Decrypt using Caesar cipher with shift 3
+# 2. Find the hidden flag format: CTF{...}
+
+# Expected solution:
+# ./ctf_crypto_tool.py caesar --shift 3 --input "Khoor, Zruog! L oryh Fodvvlf Flskhuv."
+# or
+# ./ctf_crypto_tool.py caesar --auto --input "Khoor, Zruog! L oryh Fodvvlf Flskhuv."
+
+# Hidden flag: CTF{hello_world_i_love_classical_ciphers}

@@ -1,0 +1,18 @@
+# RSA Challenge
+# Difficulty: Medium
+
+# Given:
+# n = 3233
+# e = 17
+# ciphertext = 855
+
+# Instructions:
+# 1. Factor n to find p and q
+# 2. Compute phi(n) = (p-1)*(q-1)
+# 3. Compute private key d = e^(-1) mod phi(n)
+# 4. Decrypt ciphertext to get message
+
+# Expected solution:
+# ./ctf_crypto_tool.py rsa --n 3233 --e 17 --c 855 --auto-factor
+
+# The decrypted message is the flag: CTF{rsa_is_fun}
