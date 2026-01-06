@@ -1,28 +1,26 @@
-# 🔐 CTF Crypto Toolkit
+# 🔐 CTF Crypto Toolkit v2.0
 
 ![Python](https://img.shields.io/badge/Python-3.8+-blue?logo=python&logoColor=white)
 ![Cryptography](https://img.shields.io/badge/Cryptography-CTF-red?logo=keybase&logoColor=white)
-![License](https://img.shields.io/badge/License-MIT-green)
+![Version](https://img.shields.io/badge/Version-2.0-green)
+![License](https://img.shields.io/badge/License-MIT-yellow)
 
-> A powerful command-line Swiss Army knife for solving cryptography challenges in CTFs and cybersecurity competitions
+> Advanced Swiss Army knife for solving cryptography challenges in CTFs and cybersecurity competitions
 
-## 📦 Features
+## ✨ New Features in v2.0
 
-| Module              | Description                                          | Status |
-| ------------------- | ---------------------------------------------------- | ------ |
-| **Base Encodings**  | Base64, Base32, Base16 encoding/decoding             | ✅     |
-| **Caesar Cipher**   | Bruteforce or specific shift operations              | ✅     |
-| **ROT Family**      | ROT-n transformations (ROT13, ROT47, etc.)           | ✅     |
-| **Vigenère Cipher** | Decryption with known key or brute-force attempts    | ✅     |
-| **XOR Cipher**      | Single-byte XOR bruteforce analysis                  | ✅     |
-| **Affine Cipher**   | Solve affine cipher equations                        | ✅     |
-| **RSA Operations**  | Decrypt RSA with given parameters or factorable n    | ✅     |
-| **Hash Analysis**   | MD5, SHA1, SHA256 hashing and cracking via wordlists | ✅     |
-| **Encoding Tools**  | URL encoding, HTML entities, character conversions   | ✅     |
+- **Auto-detection** of encodings and ciphers
+- **Intelligent scoring** for English text detection
+- **Extended cipher support** (AES, DES, Vigenere with auto-key detection)
+- **Enhanced RSA toolkit** with automatic factoring
+- **Hash cracking** with wordlist support
+- **Multiple encoding formats** (URL, HTML, Binary, Morse)
+- **Improved error handling** and user feedback
+- **Better performance** with optimized algorithms
 
-## 🚀 Quick Start
+## 📦 Installation
 
-### Installation
+### Quick Install
 
 ```bash
 # Clone the repository
@@ -32,193 +30,226 @@ cd CTF-Crypto-Toolkit
 # Install dependencies
 pip3 install pycryptodome
 
-# Make the script executable
+# Make executable
 chmod +x ctf_crypto_tool.py
 ```
 
-### Basic Usage
+### Docker Support
 
 ```bash
-./ctf_crypto_tool.py <mode> [options]
+# Build Docker image
+docker build -t ctf-crypto-toolkit .
+
+# Run in Docker
+docker run -it ctf-crypto-toolkit caesar --auto --input "Khoor"
 ```
 
-## 💡 Usage Examples
+## 🚀 Quick Examples
 
-### Base64 Decoding
+### Auto-detect Caesar Cipher
 
 ```bash
-./ctf_crypto_tool.py base --decode --type b64 --input "SGVsbG8gd29ybGQ="
+./ctf_crypto_tool.py caesar --auto --input "Khoor Zruog"
+# Output: Best matches sorted by English probability
 ```
 
-**Output:** `Hello world`
-
-### Caesar Cipher Bruteforce
+### Crack XOR Encryption
 
 ```bash
-./ctf_crypto_tool.py caesar --bruteforce --input "Khoor"
+./ctf_crypto_tool.py xor --auto --input "1a2b3c4d5e"
+# Automatically finds the most likely XOR key
 ```
 
-**Output:** All possible shifts with likelihood scoring
-
-### XOR Analysis
+### RSA Decryption with Auto-factoring
 
 ```bash
-./ctf_crypto_tool.py xor --bruteforce --input hex:"3a2f1b"
+./ctf_crypto_tool.py rsa --n 3233 --e 17 --c 855 --auto-factor
+# Attempts to factor n and decrypt automatically
 ```
 
-**Output:** Possible plaintexts ranked by character frequency
-
-### Hash Cracking
+### Hash Cracking with Wordlist
 
 ```bash
-./ctf_crypto_tool.py hash --crack --type md5 --hash "5d41402abc4b2a76b9719d911017c592" --wordlist rockyou.txt
+./ctf_crypto_tool.py hash --alg md5 --crack --input "5d41402abc4b2a76b9719d911017c592" --wordlist rockyou.txt
 ```
 
-**Output:** Found match: "hello"
-
-## 📋 Command Reference
-
-### Modes Overview
-
-| Mode         | Command                                                      | Description            |
-| ------------ | ------------------------------------------------------------ | ---------------------- |
-| **base**     | `base --decode --type [b64/b32/b16] --input <text>`          | Base encoding/decoding |
-| **caesar**   | `caesar --bruteforce --input <ciphertext>`                   | Caesar cipher analysis |
-| **rot**      | `rot --n <value> --input <text>`                             | ROT-n transformation   |
-| **vigenere** | `vigenere --decrypt --key <key> --input <ciphertext>`        | Vigenère decryption    |
-| **xor**      | `xor --bruteforce --input [hex:]<data>`                      | XOR analysis           |
-| **affine**   | `affine --solve --input <ciphertext>`                        | Affine cipher solver   |
-| **rsa**      | `rsa --decrypt --n <value> --e <value> --ciphertext <value>` | RSA operations         |
-| **hash**     | `hash --crack --type [md5/sha1/sha256] --hash <hash>`        | Hash cracking          |
-
-### Input Formats
-
-- **Plain text**: `--input "text"`
-- **Hex**: `--input hex:"414243"`
-- **Base64**: `--input b64:"QWxhZGRpbjpvcGVuIHNlc2FtZQ=="`
-- **File**: `--input file:input.txt`
-
-## 🛠️ Advanced Features
-
-### Automated Mode Detection
+### Detect Encoding Type
 
 ```bash
-# Tool attempts to identify cipher type
-./ctf_crypto_tool.py auto --input <ciphertext>
+./ctf_crypto_tool.py detect --input "SGVsbG8gd29ybGQ="
+# Output: Detected encoding: base64
 ```
+
+## 📋 Complete Feature List
+
+### Encoding/Decoding
+
+- **Base Family**: Base64 (standard & URL-safe), Base32, Base16, Base85, ASCII85
+- **Binary Encoding**: Text ↔ Binary conversion
+- **URL Encoding**: Percent-encoding/decoding
+- **HTML Entities**: HTML special characters
+- **Morse Code**: International Morse code
+
+### Classical Ciphers
+
+- **Caesar Cipher**: With bruteforce and auto-detection
+- **ROT Family**: ROT-n transformations
+- **Vigenère Cipher**: With Kasiski examination for key detection
+- **Affine Cipher**: Automatic parameter solving
+- **Substitution Cipher**: Frequency analysis
+
+### Modern Cryptography
+
+- **XOR Operations**: Single-byte and multi-byte XOR
+- **AES**: ECB, CBC, CTR modes
+- **DES**: ECB, CBC modes
+- **RSA Toolkit**: Complete parameter handling
+
+### Hash Operations
+
+- **Hash Generation**: MD5, SHA1, SHA256, SHA512, SHA3, BLAKE2
+- **Hash Cracking**: Dictionary attacks with wordlists
+- **Rainbow Tables**: Built-in common hash lookup
+
+### Analysis Tools
+
+- **Frequency Analysis**: Character and bigram analysis
+- **Entropy Calculation**: Measure randomness
+- **Pattern Detection**: Identify cipher types
+- **Encoding Detection**: Auto-detect encoding formats
+
+## 🔧 Advanced Usage
 
 ### Chain Operations
 
 ```bash
 # Multiple operations in sequence
-./ctf_crypto_tool.py chain --operations "base64,rot13,xor" --input <data>
+echo "Hello" | ./ctf_crypto_tool.py base --type b64 | ./ctf_crypto_tool.py caesar --shift 3
 ```
 
-### Frequency Analysis
+### File Input Support
 
 ```bash
-# Analyze ciphertext frequency
-./ctf_crypto_tool.py analyze --frequency --input <ciphertext>
+# Process files directly
+./ctf_crypto_tool.py xor --bruteforce --input file:encrypted.bin
 ```
 
-## 🧩 Supported CTF Challenge Types
-
-- **Encoding/Decoding Challenges**
-- **Classical Ciphers**
-- **Modern Cryptography**
-- **Steganography Encoding**
-- **Forensic Data Extraction**
-- **Network Packet Analysis**
-
-## 📚 Learning Resources
-
-When automated solving fails, the tool provides:
-
-- **Hints** based on cipher characteristics
-- **References** to common CTF techniques
-- **Suggested tools** for further analysis
-- **Educational explanations** of cryptographic concepts
-
-## 🔧 Dependencies
+### Output Formatting
 
 ```bash
-# Required
-pip3 install pycryptodome
-
-# Optional (for extended features)
-pip3 install numpy matplotlib  # For advanced frequency analysis
+# JSON output for programmatic use
+./ctf_crypto_tool.py caesar --auto --input "Khoor" --json
 ```
 
-## 🐳 Docker Support
+## 🎯 CTF Challenge Examples
+
+### Challenge 1: "The Secret Message"
 
 ```bash
-# Build and run with Docker
-docker build -t ctf-crypto-toolkit .
-docker run -it ctf-crypto-toolkit caesar --bruteforce --input "Khoor"
+# Encoded message: V2VsY29tZSB0byBDVEY=
+./ctf_crypto_tool.py detect --input "V2VsY29tZSB0byBDVEY="
+./ctf_crypto_tool.py base --decode --type b64 --input "V2VsY29tZSB0byBDVEY="
+```
+
+### Challenge 2: "XOR Mystery"
+
+```bash
+# Hex data: 1e3b2a4c5d6e
+./ctf_crypto_tool.py xor --auto --input "1e3b2a4c5d6e"
+```
+
+### Challenge 3: "RSA Challenge"
+
+```bash
+# Given: n=3233, e=17, c=855
+./ctf_crypto_tool.py rsa --n 3233 --e 17 --c 855 --auto-factor
+```
+
+## 📊 Performance Features
+
+- **Multi-threading** for brute force operations
+- **Caching** of common computations
+- **Progress indicators** for long operations
+- **Memory-efficient** large file handling
+- **Batch processing** support
+
+## 🛠️ Developer API
+
+The toolkit can also be used as a Python library:
+
+```python
+from ctf_crypto_tool import solve_caesar, solve_xor, english_score
+
+# Use functions directly
+results = solve_caesar("Khoor", auto=True)
+best_result = max(results, key=lambda x: x[2])
+print(f"Best match: Shift {best_result[0]}, Text: {best_result[1]}")
+```
+
+## 📁 Project Structure
+
+```
+CTF-Crypto-Toolkit/
+├── ctf_crypto_tool.py      # Main tool
+├── README.md               # This file
+├── requirements.txt        # Dependencies
+├── examples/               # Challenge examples
+│   ├── caesar_challenge.txt
+│   ├── rsa_challenge.txt
+│   └── xor_challenge.txt
+├── wordlists/              # Dictionary files
+│   └── common_passwords.txt
+└── tests/                  # Unit tests
+    ├── test_caesar.py
+    └── test_xor.py
 ```
 
 ## 🤝 Contributing
 
-We welcome contributions from the cybersecurity community! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
+See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines on contributing to this project.
 
-1. Fork the repository
-2. Create a feature branch
-3. Add tests for new functionality
-4. Submit a pull request
+## ⚠️ Security Disclaimer
 
-## ⚠️ Legal Disclaimer
+**This tool is for:**
 
-This tool is intended for:
-
-- CTF competitions
+- CTF competitions and challenges
 - Educational purposes
 - Security research with proper authorization
 
-**Do not use for unauthorized access to systems or data.**
+**Not for:**
+
+- Unauthorized access to systems
+- Illegal activities
+- Production cryptography
+
+All cryptographic implementations are for educational purposes only. Use industry-standard libraries for production systems.
 
 ## 📄 License
 
 MIT License - See [LICENSE](LICENSE) for details.
 
----
-
 ## 🌟 Star History
 
-[![Star History Chart](https://api.star-history.com/svg?repos=satellacodes/CTF-Crypto-Toolkit&type=Date)](https://star-history.com/#satellacodes/CTF-Crypto-Toolkit&Date)
+[![Star History Chart](https://api.star-history.com/svg?repos=satellacodes/CTF-Crypto-Toolkit&type=Date)](https://star-history.com/#satellacodesCTF-Crypto-Toolkit&Date)
+
+---
+
+## 🔗 Useful Resources
+
+- [CyberChef](https://gchq.github.io/CyberChef/) - Web-based cyber operations
+- [Cryptohack](https://cryptohack.org/) - Cryptography challenges
+- [CTFtime](https://ctftime.org/) - CTF competitions calendar
+- [Awesome CTF](https://github.com/apsdehal/awesome-ctf) - CTF resource collection
 
 ## 👨‍💻 Author
 
 **Dimas Aris Pangestu** - Cybersecurity researcher and CTF enthusiast
 
-[![Tryhackme](https://img.shields.io/badge/TryHackMe-satella-orange?logo=https://tryhackme.com/api/v2/badges/public-profile?userPublicId=2155302)](https://tryhackme.com/p/satella)
+[![Twitter](https://img.shields.io/badge/Tryhackme-@satella-blue?logo=Tryhackme)](https://tryhackme.com/p/satella)
 [![GitHub](https://img.shields.io/badge/GitHub-satellacodes-black?logo=github)](https://github.com/satellacodes)
 
 ---
 
-**Made with ❤️ for the CTF community**
+**Happy Hacking! May your flags be captured and your ciphers broken!** 🚩🔓
 
 _If this tool helped you solve a challenge, consider giving it a star! ⭐_
-
----
-
-## 🚨 Troubleshooting
-
-### Common Issues
-
-1. **Permission denied**: Run `chmod +x ctf_crypto_tool.py`
-2. **Missing dependencies**: Run `pip3 install -r requirements.txt`
-3. **Python version**: Ensure Python 3.8+ is installed
-
-### Getting Help
-
-```bash
-# Display help
-./ctf_crypto_tool.py --help
-
-# Module-specific help
-./ctf_crypto_tool.py caesar --help
-```
-
----
-
-**Happy Hacking! 🔓**
