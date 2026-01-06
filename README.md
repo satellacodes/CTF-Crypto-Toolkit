@@ -190,8 +190,8 @@ MIT License - See [LICENSE](LICENSE) for details.
 
 **Dimas Aris Pangestu** - Cybersecurity researcher and CTF enthusiast
 
-[![Twitter](https://img.shields.io/badge/Twitter-@handle-blue?logo=twitter)](https://twitter.com/handle)
-[![GitHub](https://img.shields.io/badge/GitHub-username-black?logo=github)](https://github.com/satellacodes)
+[![Tryhackme](https://img.shields.io/badge/TryHackMe-satella-orange?logo=https://tryhackme.com/api/v2/badges/public-profile?userPublicId=2155302)](https://tryhackme.com/p/satella)
+[![GitHub](https://img.shields.io/badge/GitHub-satellacodes-black?logo=github)](https://github.com/satellacodes)
 
 ---
 
