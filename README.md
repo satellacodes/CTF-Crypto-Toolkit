@@ -26,7 +26,7 @@
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/CTF-Crypto-Toolkit.git
+git clone https://github.com/satellacodes/CTF-Crypto-Toolkit.git
 cd CTF-Crypto-Toolkit
 
 # Install dependencies
