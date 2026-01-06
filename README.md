@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="assets/logoCTF.png" alt="CTFlogos" width="900"/>
+</p>
+
 # 🔐 CTF Crypto Toolkit v2.0
 
 ![Python](https://img.shields.io/badge/Python-3.8+-blue?logo=python&logoColor=white)
